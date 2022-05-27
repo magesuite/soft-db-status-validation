@@ -46,12 +46,19 @@ class SoftDbStatusValidatorTest extends \PHPUnit\Framework\TestCase
             ->willReturn(\Magento\Framework\App\State::MODE_PRODUCTION)
         ;
 
+        $deploymentConfigMock = $this->createMock(\Magento\Framework\App\DeploymentConfig::class);
+        $deploymentConfigMock
+            ->method('get')
+            ->willReturn(false);
+
+
         $validator = new \MageSuite\SoftDbStatusValidation\Module\Plugin\SoftDbStatusValidator(
             $cacheMock,
             $dbVersionMock,
             $configMock,
             $appStateMock,
-            $loggerMock
+            $loggerMock,
+            $deploymentConfigMock
         );
 
         $validator->beforeDispatch(

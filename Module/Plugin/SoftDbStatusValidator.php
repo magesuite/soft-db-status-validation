@@ -27,9 +27,10 @@ class SoftDbStatusValidator extends \Magento\Framework\Module\Plugin\DbStatusVal
         \Magento\Framework\Module\DbVersionInfo $dbVersionInfo,
         \MageSuite\SoftDbStatusValidation\Model\Config $config,
         \Magento\Framework\App\State $appState,
-        \Psr\Log\LoggerInterface $logger
+        \Psr\Log\LoggerInterface $logger,
+        \Magento\Framework\App\DeploymentConfig $deploymentConfig
     ) {
-        parent::__construct($cache, $dbVersionInfo);
+        parent::__construct($cache, $dbVersionInfo, $deploymentConfig);
 
         $this->config = $config;
         $this->logger = $logger;
