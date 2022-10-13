@@ -46,7 +46,6 @@ class SoftDbStatusValidatorTest extends \PHPUnit\Framework\TestCase
             ->willReturn(\Magento\Framework\App\State::MODE_PRODUCTION)
         ;
 
-
         $validator = new \MageSuite\SoftDbStatusValidation\Module\Plugin\SoftDbStatusValidator(
             $cacheMock,
             $dbVersionMock,
