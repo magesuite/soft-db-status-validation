@@ -4,14 +4,6 @@
         <plugin name="install" type="MageSuite\SoftDbStatusValidation\Module\Plugin\SoftDbStatusValidator" sortOrder="40"/>
     </type>
 
-    <type name="Magento\Framework\Setup\Declaration\Schema\UpToDateDeclarativeSchema">
-        <plugin
-            name="add_detailed_not_up_to_date_message"
-            type="MageSuite\SoftDbStatusValidation\Plugin\Magento\Framework\Setup\Declaration\Schema\UpToDateDeclarativeSchema\AddDetailedNotUpToDateMessage"
-            sortOrder="10"
-        />
-    </type>
-
     <type name="MageSuite\SoftDbStatusValidation\Module\Plugin\SoftDbStatusValidator">
         <arguments>
             <argument name="cache" xsi:type="object">Magento\Framework\App\Cache\Type\Config</argument>

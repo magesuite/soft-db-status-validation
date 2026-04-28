@@ -1,6 +1,6 @@
 <?php
 
-namespace MageSuite\SoftDbStatusValidation\Test\Unit\Module\Plugin;
+namespace MageSuite\SoftDbStatusValidation\Test\Unit;
 
 class SoftDbStatusValidatorTest extends \PHPUnit\Framework\TestCase
 {
