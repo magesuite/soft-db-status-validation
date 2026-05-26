@@ -26,7 +26,7 @@ class SoftDbStatusValidatorTest extends \PHPUnit\Framework\TestCase
             ])
         ;
 
-        $configMock = $this->createMock(\MageSuite\SoftDbStatusValidation\Model\Config::class);
+        $configMock = $this->createMock(\MageSuite\SoftDbStatusValidation\Helper\Configuration::class);
 
         $configMock
             ->method('isEnabled')
