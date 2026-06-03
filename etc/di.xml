@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\Framework\App\FrontController">
-        <plugin name="install" type="MageSuite\SoftDbStatusValidation\Module\Plugin\SoftDbStatusValidator" sortOrder="40"/>
+        <plugin name="install" type="MageSuite\SoftDbStatusValidation\Plugin\Magento\Framework\App\FrontController\SoftDbStatusValidator" sortOrder="40"/>
     </type>
 
     <type name="Magento\Framework\Setup\Declaration\Schema\UpToDateDeclarativeSchema">
@@ -12,7 +12,7 @@
         />
     </type>
 
-    <type name="MageSuite\SoftDbStatusValidation\Module\Plugin\SoftDbStatusValidator">
+    <type name="MageSuite\SoftDbStatusValidation\Plugin\Magento\Framework\App\FrontController\SoftDbStatusValidator">
         <arguments>
             <argument name="cache" xsi:type="object">Magento\Framework\App\Cache\Type\Config</argument>
         </arguments>

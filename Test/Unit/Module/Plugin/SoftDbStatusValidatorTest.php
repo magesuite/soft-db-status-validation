@@ -26,7 +26,7 @@ class SoftDbStatusValidatorTest extends \PHPUnit\Framework\TestCase
             ])
         ;
 
-        $configMock = $this->createMock(\MageSuite\SoftDbStatusValidation\Model\Config::class);
+        $configMock = $this->createMock(\MageSuite\SoftDbStatusValidation\Helper\Configuration::class);
 
         $configMock
             ->method('isEnabled')
@@ -50,15 +50,14 @@ class SoftDbStatusValidatorTest extends \PHPUnit\Framework\TestCase
         $deploymentConfigMock
             ->method('get')
             ->willReturn(false);
-
-
-        $validator = new \MageSuite\SoftDbStatusValidation\Module\Plugin\SoftDbStatusValidator(
+        
+        $validator = new \MageSuite\SoftDbStatusValidation\Plugin\Magento\Framework\App\FrontController\SoftDbStatusValidator(
             $cacheMock,
             $dbVersionMock,
+            $deploymentConfigMock,
             $configMock,
             $appStateMock,
-            $loggerMock,
-            $deploymentConfigMock
+            $loggerMock
         );
 
         $validator->beforeDispatch(
